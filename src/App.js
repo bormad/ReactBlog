@@ -10,7 +10,6 @@ import { FullPost } from './pages/FullPost';
 
 
 function App() {
-  console.log(123)
 
   const postId = window.location.pathname.split('/post/')[1];
 
@@ -19,13 +18,11 @@ function App() {
     <>
       <Header/>
 
-      <Link to="/about">Открыть статью 2</Link>
-
       <Routes>
         <Route path='/' element={<Home/>} exact/>
         <Route path='/about' element={<About/>}/>
         <Route path='/login' element={<h1>Логин форма</h1>}/>
-        <Route path='/post/' element={<FullPost id={postId}/>}/>
+        <Route path='/post/:id' element={<FullPost id={postId}/>}/>
       </Routes>
 
       <Footer/>

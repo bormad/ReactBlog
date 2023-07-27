@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const posts = [
     {
@@ -44,7 +45,7 @@ export const Home = () => {
                 <Card>
                 <Card.Img variant="top" src={obj.imageUrl} />
                 <Card.Body>
-                    <Card.Title><a href={`/post/${obj.id}`}>{obj.title}</a></Card.Title>
+                    <Card.Title><Link to={`/post/${obj.id}`}>{obj.title}</Link></Card.Title>
                     <Card.Text>
                     {obj.text}
                     </Card.Text>
