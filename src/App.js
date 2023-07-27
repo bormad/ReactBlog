@@ -10,7 +10,7 @@ import { FullPost } from './pages/FullPost';
 
 
 function App() {
-
+  console.log(123)
 
   const postId = window.location.pathname.split('/post/')[1];
 
