@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Routes, Route, Link} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import { Header } from './components/Header';
@@ -10,10 +10,6 @@ import { FullPost } from './pages/FullPost';
 
 
 function App() {
-
-  const postId = window.location.pathname.split('/post/')[1];
-
-
   return (
     <>
       <Header/>
@@ -22,7 +18,7 @@ function App() {
         <Route path='/' element={<Home/>} exact/>
         <Route path='/about' element={<About/>}/>
         <Route path='/login' element={<h1>Логин форма</h1>}/>
-        <Route path='/post/:id' element={<FullPost id={postId}/>}/>
+        <Route path='/post/:id' element={<FullPost/>}/>
       </Routes>
 
       <Footer/>

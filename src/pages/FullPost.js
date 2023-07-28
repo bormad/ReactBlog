@@ -1,11 +1,17 @@
 import { Button } from 'react-bootstrap';
+import { useParams, Link } from "react-router-dom";
+import { posts } from './Home';
 
-export const FullPost = ({ id }) => {
+export const FullPost = () => {
+    let { id } = useParams();
+
+    const post = posts.find(obj => obj.id.toString() === id);
+
     return (
         <div className='full-post'>
-            <h1>Статья №{id}</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur quia velit sit assumenda dolorem labore minima quaerat quas tempora natus repellendus deleniti sunt odio ut explicabo, laborum doloribus debitis fugiat.</p>
-            <Button>Назад</Button>
+            <h1>{post.title}</h1>
+            <p>{post.text}</p>
+            <Button to="/" as={Link}>Назад</Button>
         </div>
     )
 }
